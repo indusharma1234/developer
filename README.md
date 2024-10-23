@@ -1,2 +1,7 @@
 # developer
 this is for deploying docker container
+
+
+IT WELL PROVIDE A DOCKER FILE
+
+NOTE: YOU NEED DOCKER INSTALLTION BEFORE USING DOCKERFILE
