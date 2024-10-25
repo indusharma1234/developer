@@ -11,7 +11,7 @@
         
     - name: copy dockerfile to remote ansible machine
     - copy:
-       src: /var/lib/jenkins/workspace/ansibledocker/Dockerfile
+       src: /var/lib/jenkins/workspace/devops/Dockerfile
        dest: /home/ubuntu/
        
     - name: docker image creation
@@ -19,7 +19,7 @@
          name: net1
          source: build
          build:
-           path: /var/lib/jenkins/workspace/ansibledocker/
+           path: /home/ubuntu/
            pull: false
 
     - name : docker container creation 
