@@ -1,21 +1,22 @@
 ---
 
 - name: docker playbook
-- hosts: all
-- become: true
-- tasks:
+  hosts: all
+  become: true
+  tasks:
     - name: docker installation
-    - apt:
+      apt:
+        update_cache: yes
         name: docker.io
         state: present
         
     - name: copy dockerfile to remote ansible machine
-    - copy:
+      copy:
        src: /var/lib/jenkins/workspace/devops/Dockerfile
        dest: /home/ubuntu/
        
     - name: docker image creation
-    - docker_ image:
+      docker_ image:
          name: net1
          source: build
          build:
@@ -23,14 +24,14 @@
            pull: false
 
     - name : docker container creation 
-    - docker_container:
+      docker_container:
         name: cs4
         image: net1
         detach: true
         state: started
         tty: true
         exposed_ports:
-        - "80"
+        - "80:"
         ports:
         - "80:80"
    
