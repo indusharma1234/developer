@@ -12,7 +12,7 @@
         
     - name: copy dockerfile to remote ansible machine
       copy:
-       src: /var/lib/jenkins/workspace/neti1/Dockerfile
+       src: /var/lib/jenkins/workspace/demo1/Dockerfile
        dest: /home/ubuntu/
        
     - name: docker image creation
